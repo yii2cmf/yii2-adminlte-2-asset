@@ -1,0 +1,22 @@
+{
+    "name": "yii2cmf/yii2-adminlte-asset",
+    "description": "AdminLTE Asset Bundle for Backend Theme in Yii2 Framework",
+    "type": "yii2-extension",
+    "keywords": ["yii2","extension","adminlte","template"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Shandyrov Askar",
+            "email": "shandyrov@gmail.com"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "~2.0.0",
+        "almasaeed2010/adminlte": "~2.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "yii2cmf\\adminlte\\": "src"
+        }
+    }
+}
