@@ -1,4 +1,5 @@
 <?php
+use app\widgets\Alert;
 /* @var $content */
 ?>
 <!-- Content Wrapper. Contains page content -->
@@ -30,6 +31,7 @@
         <!--------------------------
           | Your Page Content Here |
           -------------------------->
+        <?= Alert::widget() ?>
         <?= $content ?>
 
     </section>
