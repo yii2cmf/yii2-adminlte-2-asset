@@ -24,7 +24,7 @@ class Menu extends Widget
     private function getMenu()
     {
         $menu = '';
-        foreach ($this->menu as $key => $menuItem) {
+        foreach ($this->items as $key => $menuItem) {
             self::getMenuItem($menu, $menuItem, true);
         }
         return $menu;
@@ -34,18 +34,18 @@ class Menu extends Widget
     {
         if (array_key_exists('items', $menuItem)) {
             if ($parent) {
-                $active = isset($menuItem['active']) ? 'treeview active menu-open' : '';
+                $active = isset($menuItem['active']) && $menuItem['active'] ? 'treeview active menu-open' : 'treeview';
             } else {
-                $active = isset($menuItem['active']) ? 'active' : '';
+                $active = isset($menuItem['active']) && $menuItem['active'] ? 'active' : '';
             }
             $menu .= Html::beginTag('li', ['class' => "$active"]);
         } else {
-            $active = isset($menuItem['active']) ? 'active' : '';
+            $active = isset($menuItem['active']) && $menuItem['active'] ? 'active' : '';
             $menu .= Html::beginTag('li', ['class' => "$active"]);;
         }
 
-        $menu .= Html::beginTag('a', ['href' => Url::toRoute($menuItem['url'])]);
-        $menu .= Html::tag('i', '', ['class' => $parent ? 'fa fa-share' : $menuItem['icon'] ?? 'fa fa-circle-o' ]);
+        $menu .= Html::beginTag('a', ['href' => isset($menuItem['url']) ? Url::toRoute($menuItem['url']) : '#']);
+        $menu .= Html::tag('i', '', ['class' => self::getIcon($menuItem, $parent)]);
         $menu .= Html::tag('span', $menuItem['label']);
 
         if (array_key_exists('items', $menuItem)) {
@@ -62,7 +62,7 @@ class Menu extends Widget
         $menu .= Html::endTag('li');
     }
 
-    public static function displayChildren(&$menu, $menuItem):void
+    private static function displayChildren(&$menu, $menuItem):void
     {
         $menu .= Html::beginTag('ul', ['class' => 'treeview-menu']);
         // display each child
@@ -72,4 +72,14 @@ class Menu extends Widget
         $menu .= Html::endTag('ul');
     }
 
+    private static function getIcon(array $menuItem, bool $parent)
+    {
+        if ($parent && !isset($menuItem['icon']) && isset($menuItem['items'])) {
+            return 'fa fa-share';
+        } elseif(!isset($menuItem['icon']) && !isset($menuItem['items'])){
+            return 'fa fa-circle-o';
+        } else {//elseif ($parent && isset($menuItem['icon']))
+            return $menuItem['icon'];
+        }
+    }
 }
