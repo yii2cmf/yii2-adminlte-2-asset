@@ -33,11 +33,7 @@ class Menu extends Widget
     private static function getMenuItem(string &$menu, array $menuItem, bool $parent = false):void
     {
         if (array_key_exists('items', $menuItem)) {
-            if ($parent) {
-                $active = isset($menuItem['active']) && $menuItem['active'] ? 'treeview active menu-open' : 'treeview';
-            } else {
-                $active = isset($menuItem['active']) && $menuItem['active'] ? 'active' : '';
-            }
+            $active = isset($menuItem['active']) && $menuItem['active'] ? 'treeview active menu-open' : 'treeview';
             $menu .= Html::beginTag('li', ['class' => "$active"]);
         } else {
             $active = isset($menuItem['active']) && $menuItem['active'] ? 'active' : '';
