@@ -28,4 +28,7 @@ Usage
 Once the extension is installed, simply use it in your code by  :
 
 ```php
-<?= \yii2cmf\adminlte\AutoloadExample::widget(); ?>```
+use yii2cmf\adminlte\AdminLTEAsset;
+
+AdminLTEAsset::register($this);
+```
