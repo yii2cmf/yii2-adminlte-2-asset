@@ -1,5 +1,5 @@
 <?php
-namespace yii2cmf\adminlte\widgets;
+namespace yii2cmf\adminlte2\widgets;
 
 use yii\base\Widget;
 use yii\helpers\Html;
