@@ -1,5 +1,5 @@
 <?php
-use yii2cmf\adminlte\AdminLTEAsset;
+use yii2cmf\adminlte2\AdminLTEAsset;
 use yii\helpers\Html;
 
 /* @var $content mixed */
