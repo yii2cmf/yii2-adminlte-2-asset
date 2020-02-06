@@ -10,7 +10,7 @@ The preferred way to install this extension is through [composer](http://getcomp
 Either run
 
 ```
-php composer.phar require yii2cmf/yii2-adminlte-2-asset "*"
+php composer require yii2cmf/yii2-adminlte-2-asset "*"
 ```
 
 or add
