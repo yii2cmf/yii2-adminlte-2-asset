@@ -10,13 +10,13 @@ The preferred way to install this extension is through [composer](http://getcomp
 Either run
 
 ```
-php composer.phar require yii2cmf/yii2-adminlte-asset "*"
+php composer.phar require yii2cmf/yii2-adminlte-2-asset "*"
 ```
 
 or add
 
 ```
-"yii2cmf/yii2-adminlte-asset": "*"
+"yii2cmf/yii2-adminlte-2-asset": "*"
 ```
 
 to the require section of your `composer.json` file.
