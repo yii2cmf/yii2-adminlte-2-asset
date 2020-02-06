@@ -16,7 +16,7 @@ php composer require yii2cmf/yii2-adminlte-2-asset "*"
 or add
 
 ```
-"yii2cmf/yii2-adminlte-2-asset": "*"
+"yii2cmf/yii2-adminlte-2-asset": "1.0"
 ```
 
 to the require section of your `composer.json` file.
@@ -28,7 +28,7 @@ Usage
 Once the extension is installed, simply use it in your code by  :
 
 ```php
-use yii2cmf\adminlte\AdminLTEAsset;
+use yii2cmf\adminlte2\AdminLTEAsset;
 
 AdminLTEAsset::register($this);
 ```
